@@ -1,8 +1,18 @@
-import numpy as np
+def sample_function3():
+    """
+    This is supposed to be the change
+    """
+    var = 1
+    SomeOtherValue = 117
+
+    return "Some higher meaning"
 
 
-def fun117():
+def sample_function_returns_for_the_second_time():
     """
-    Docstring for 117
+    Take some action, you'll thank yourself.
     """
-    return "It works?"
+    var = 13
+    SomeOtherValue = 118
+
+    return "Dont let anything get in your way...try again....fail again"
