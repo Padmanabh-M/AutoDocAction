@@ -35,8 +35,14 @@ jobs:
       - name: Build HTML
         run: | 
           cd docs/
-          make clean html
-          make html
+          rm -r *
+          printf 'n\n\nDocForFabric\n\nPaddy\n\n1\n\n' | sphinx-quickstart
+          cd ..
+          cp ./index.rst ./conf.py ./docs
+          sphinx-apidoc -o docs .
+          rm docs/conf.rst
+          cd docs/
+          start make.bat html
 
       - name: Run ghp-import
         run: | 
