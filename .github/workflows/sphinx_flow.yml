@@ -42,7 +42,8 @@ jobs:
           sphinx-apidoc -o docs .
           rm docs/conf.rst
           cd docs/
-          sudo apt install wine64
+          lscpu
+          sudo apt-get install wine64
           wineconsole cmd
           start make.bat html
 
