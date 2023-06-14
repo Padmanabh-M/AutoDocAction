@@ -35,12 +35,13 @@ jobs:
       - name: Build HTML
         run: | 
           cd docs/
-          rm -r *
+          rm -rf *
           printf 'n\n\nDocForFabric\n\nPaddy\n\n1\n\n' | sphinx-quickstart
           cd ..
           cp ./index.rst ./conf.py ./docs
           sphinx-apidoc -o docs .
           rm docs/conf.rst
+          rm -f DELETEFILE.txt
           cd docs/
           make html
 
