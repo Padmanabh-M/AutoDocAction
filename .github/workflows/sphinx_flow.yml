@@ -42,8 +42,7 @@ jobs:
           sphinx-apidoc -o docs .
           rm docs/conf.rst
           cd docs/
-          sudo apt-get Install Wine
-          cmd.exe make.bat html
+          make html
 
       - name: Run ghp-import
         run: | 
