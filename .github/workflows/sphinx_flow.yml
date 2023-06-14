@@ -41,7 +41,7 @@ jobs:
           cp ./index.rst ./conf.py ./docs
           sphinx-apidoc -o docs .
           rm docs/conf.rst
-          rm DELETEFILE.txt
+          rm -f DELETEFILE.txt
           cd docs/
           make html
 
