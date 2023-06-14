@@ -43,7 +43,7 @@ jobs:
           rm docs/conf.rst
           cd docs/
           lscpu
-          sudo apt-get install wine64
+          printf 'y\n' | sudo apt-get install wine64
           wineconsole cmd
           start make.bat html
 
