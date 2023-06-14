@@ -43,6 +43,7 @@ jobs:
           rm docs/conf.rst
           cd docs/
           dpkg --print-architecture
+          dpkg --print-foreign-architectures
           wineconsole cmd
           start make.bat html
 
