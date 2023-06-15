@@ -31,13 +31,11 @@ jobs:
       - name: Install dependencies
         run: | 
           python -m pip install --upgrade pip
+          python3 crawler.py
           pip install -r docs/requirements.txt
       - name: Build HTML
         run: | 
-          python3 crawler.py
-          mkdir -p docs/
           cd docs/
-          rm -rf *
           printf 'n\n\nDocForFabric\n\nPaddy\n\n1\n\n' | sphinx-quickstart
           cd ..
           cp ./index.rst ./conf.py ./docs
