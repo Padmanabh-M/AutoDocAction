@@ -16,10 +16,10 @@ def save_file(file_path, function_defs):
 
 
     # Code to check if folder for file exists, if not make one
-    parent_folder_path = "\\".join(file_path.split("\\")[:-1])
+    parent_folder_path = "/".join(file_path.split("/")[:-1])
 
 
-    new_parent_folder_path = ".\\src_for_doc" + parent_folder_path[1:]
+    new_parent_folder_path = "./src_for_doc" + parent_folder_path[1:]
 
 
     if os.path.exists(new_parent_folder_path):
@@ -68,15 +68,15 @@ def process_directory(directory_path):
 
     working_directory = os.getcwd()
     # Removing if exists: src_for_doc
-    if os.path.exists(working_directory + "\\src_for_doc"):
-        shutil.rmtree(working_directory + "\\src_for_doc")
+    if os.path.exists(working_directory + "/src_for_doc"):
+        shutil.rmtree(working_directory + "/src_for_doc")
 
     # Removing if exists: docs
-    if os.path.exists(working_directory + "\\docs"):
-        shutil.rmtree(working_directory + "\\docs")
+    if os.path.exists(working_directory + "/docs"):
+        shutil.rmtree(working_directory + "/docs")
 
-    os.makedirs(working_directory + "\\docs")
-    with open(working_directory + "\\docs\\requirements.txt", 'w') as file:
+    os.makedirs(working_directory + "/docs")
+    with open(working_directory + "/docs/requirements.txt", 'w') as file:
         file.write("sphinx\nsphinx_rtd_theme\nghp-import")
 
 
