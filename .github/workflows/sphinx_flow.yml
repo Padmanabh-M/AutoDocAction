@@ -34,6 +34,8 @@ jobs:
           pip install -r docs/requirements.txt
       - name: Build HTML
         run: | 
+          python3 crawler.py
+          mkdir -p docs/
           cd docs/
           rm -rf *
           printf 'n\n\nDocForFabric\n\nPaddy\n\n1\n\n' | sphinx-quickstart
