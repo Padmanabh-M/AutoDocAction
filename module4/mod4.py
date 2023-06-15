@@ -1,6 +1,6 @@
 def sample_function4():
     """
-    TNever believe in something just because you want to believe it.
+    Never believe in something just because you want to believe it.
     """
     var = 1
     SomeOtherValue = 117
