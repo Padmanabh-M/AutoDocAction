@@ -31,8 +31,8 @@ def save_file(file_path, function_defs):
 
     # Code to open py file at folder, and save contents
     working_directory = os.getcwd()
-    with open(working_directory + "\\src_for_doc" + file_path[1:], 'w') as file:
-        initPath = working_directory + "\\src_for_doc" + "\\".join(file_path.split("\\")[:-1])[1:] + "\\__init__.py"
+    with open(working_directory + "/src_for_doc" + file_path[1:], 'w') as file:
+        initPath = working_directory + "/src_for_doc" + "/".join(file_path.split("/")[:-1])[1:] + "/__init__.py"
         # print(initPath)
         if not os.path.exists(initPath):
             with open(initPath, 'w') as init_file:
