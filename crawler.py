@@ -67,8 +67,18 @@ def extract_functions(file_path):
 def process_directory(directory_path):
 
     working_directory = os.getcwd()
+    # Removing if exists: src_for_doc
     if os.path.exists(working_directory + "\\src_for_doc"):
         shutil.rmtree(working_directory + "\\src_for_doc")
+
+    # Removing if exists: docs
+    if os.path.exists(working_directory + "\\docs"):
+        shutil.rmtree(working_directory + "\\docs")
+
+    os.makedirs(working_directory + "\\docs")
+    with open(working_directory + "\\docs\\requirements.txt", 'w') as file:
+        file.write("sphinx\nsphinx_rtd_theme\nghp-import")
+
 
     for root, dirs, files in os.walk(directory_path):
         for file in files:
