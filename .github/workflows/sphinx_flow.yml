@@ -37,7 +37,7 @@ jobs:
       - name: Build HTML
         run: | 
           ls 
-          sh order66
+          sh order66.sh
 
       - name: Run ghp-import
         run: | 
