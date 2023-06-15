@@ -71,13 +71,16 @@ def process_directory(directory_path):
     working_directory = os.getcwd()
     # Removing if exists: src_for_doc
     if os.path.exists(working_directory + "/src_for_doc"):
+        print("src_for_doc already exists......Cleaning")
         shutil.rmtree(working_directory + "/src_for_doc")
 
     # Removing if exists: docs
     if os.path.exists(working_directory + "/docs"):
+        print("Docs folder already exists......Cleaning")
         shutil.rmtree(working_directory + "/docs")
-
+    
     os.makedirs(working_directory + "/docs")
+
     with open(working_directory + "/docs/requirements.txt", 'w') as file:
         file.write("sphinx\nsphinx_rtd_theme\nghp-import")
 
