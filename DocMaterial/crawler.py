@@ -93,7 +93,7 @@ def process_directory(directory_path):
 
 
 
-directory_path = '.'
+directory_path = '..'
 process_directory(directory_path)
 
 
