@@ -15,4 +15,4 @@ def sample_function_returns_for_the_second_time():
     var = 13
     SomeOtherValue = 118
 
-    return "Dont let anything get in your way...try again....fail again....fail better"
+    return "Dont let anything get in your way...try again....fail again....fail better ~ Peter Dinklage"
