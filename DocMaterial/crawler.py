@@ -8,11 +8,13 @@ import shutil
 def save_file(file_path, function_defs):
     
     # Code to check if src_for_doc folder exists, if not make one.
-    if os.path.exists('./src_for_doc'):
-        pass
-    else:
-        # print("Making new src_for_doc folder")
-        os.mkdir("./src_for_doc")
+    # if os.path.exists('./src_for_doc'):
+    #     pass
+    # else:
+    #     # print("Making new src_for_doc folder")
+    #     os.mkdir("./src_for_doc")
+
+    print("FILE_PATH", file_path)
 
 
     # Code to check if folder for file exists, if not make one
@@ -83,7 +85,7 @@ def process_directory(directory_path):
     for root, dirs, files in os.walk(directory_path):
         for file in files:
             if file.endswith('.py'):  # Process only Python files
-                if not file.endswith('crawler.py'): # Except the crawler
+                if not file.endswith('crawler.py') and not file.endswith('conf.py'): # Except the crawler or conf
                     file_path = os.path.join(root, file)
                     function_defs = extract_functions(file_path)
                     if function_defs:
