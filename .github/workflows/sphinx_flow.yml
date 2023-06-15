@@ -36,7 +36,8 @@ jobs:
           pip install -r docs/requirements.txt
       - name: Build HTML
         run: | 
-          sh order66
+          ls 
+          sh order66.sh
 
       - name: Run ghp-import
         run: | 
