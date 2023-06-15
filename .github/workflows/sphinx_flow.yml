@@ -32,8 +32,6 @@ jobs:
         run: | 
           python -m pip install --upgrade pip
           python3 DocMaterial/crawler.py
-          ls src_for_doc.
-          cat src_for_doc./AutoDocAction/module1/mod1.py
           pip install -r docs/requirements.txt
       - name: Build HTML
         run: | 
