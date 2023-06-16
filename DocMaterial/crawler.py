@@ -23,6 +23,21 @@ def save_file(file_path, function_defs):
 
     new_parent_folder_path = "./src_for_doc" + parent_folder_path[1:]
 
+    new_parent_split = new_parent_folder_path.split("/")
+
+    print(new_parent_split)
+
+    working_directory = os.getcwd()
+
+    for i in new_parent_split:
+        if i != "src_for_doc":
+            with open(working_directory + "/src_for_doc" + file_path[1:], 'w') as file:
+                initPath = working_directory + "/src_for_doc" + i + "/__init__.py"
+                # print(initPath)
+                if not os.path.exists(initPath):
+                    with open(initPath, 'w') as init_file:
+                        pass
+
 
     if os.path.exists(new_parent_folder_path):
         # print("new_parent_folder_path exists")
@@ -32,7 +47,7 @@ def save_file(file_path, function_defs):
 
 
     # Code to open py file at folder, and save contents
-    working_directory = os.getcwd()
+    
     with open(working_directory + "/src_for_doc" + file_path[1:], 'w') as file:
         initPath = working_directory + "/src_for_doc" + "/".join(file_path.split("/")[:-1])[1:] + "/__init__.py"
         # print(initPath)
@@ -47,7 +62,7 @@ def save_file(file_path, function_defs):
 
 
 def extract_functions(file_path):
-    print(file_path)
+    # print(file_path)
     with open(file_path, 'r', encoding="utf8") as file:
         tree = ast.parse(file.read())
 
