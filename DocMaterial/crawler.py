@@ -23,7 +23,7 @@ def save_file(file_path, function_defs):
     print("PARENT_FOLDER_PATH: ", parent_folder_path)
 
 
-    new_parent_folder_path = "./src_for_doc" + parent_folder_path[1:]
+    new_parent_folder_path = "/src_for_doc" + parent_folder_path[2:]
 
     print("new_parent_folder_path: ", new_parent_folder_path)
 
