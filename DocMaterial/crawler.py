@@ -20,8 +20,12 @@ def save_file(file_path, function_defs):
     # Code to check if folder for file exists, if not make one
     parent_folder_path = "/".join(file_path.split("/")[:-1])
 
+    print("PARENT_FOLDER_PATH: ", parent_folder_path)
+
 
     new_parent_folder_path = "./src_for_doc" + parent_folder_path[1:]
+
+    print("new_parent_folder_path: ", new_parent_folder_path)
 
     if os.path.exists(new_parent_folder_path):
         # print("new_parent_folder_path exists")
@@ -31,12 +35,15 @@ def save_file(file_path, function_defs):
 
     new_parent_split = new_parent_folder_path.split("/")
 
-    print(new_parent_split)
+    print("new_parent_split: ", new_parent_split)
 
     working_directory = os.getcwd()
 
     print("WORKING DIR: ", working_directory)
-    print("file_path[1:] --- > ", file_path[1:])
+
+    initPath = working_directory + "/src_for_doc" + "/" + i + "/__init__.py"
+
+    print("INITPATH: ", initPath)
 
 
     for i in new_parent_split:
