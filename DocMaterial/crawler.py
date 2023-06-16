@@ -27,17 +27,17 @@ def save_file(file_path, function_defs):
 
     print("new_parent_folder_path: ", new_parent_folder_path)
 
+    working_directory = os.getcwd()
+
     if os.path.exists(new_parent_folder_path):
         # print("new_parent_folder_path exists")
         pass
     else:
-        os.makedirs(new_parent_folder_path)
+        os.makedirs(working_directory+new_parent_folder_path)
 
     new_parent_split = new_parent_folder_path.split("/")
 
     print("new_parent_split: ", new_parent_split)
-
-    working_directory = os.getcwd()
 
     print("WORKING DIR: ", working_directory)
 
