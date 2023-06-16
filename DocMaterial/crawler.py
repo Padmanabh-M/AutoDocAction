@@ -37,16 +37,14 @@ def save_file(file_path, function_defs):
 
     print("WORKING DIR: ", working_directory)
     print("file_path[1:] --- > ", file_path[1:])
-    
 
-    # for i in new_parent_split:
-    #     if i != "src_for_doc" and i != ".":
-    #         with open(working_directory + "/src_for_doc" + file_path[1:], 'w') as file:
-    #             initPath = working_directory + "/src_for_doc" + i + "/__init__.py"
-    #             # print(initPath)
-    #             if not os.path.exists(initPath):
-    #                 with open(initPath, 'w') as init_file:
-    #                     pass
+
+    for i in new_parent_split:
+        if i != "src_for_doc" and i != ".":
+           initPath = working_directory + "/src_for_doc" + "/" + i + "/__init__.py"
+           if not os.path.exists(initPath):
+                with open(initPath, 'w') as init_file:
+                    pass
 
 
     
