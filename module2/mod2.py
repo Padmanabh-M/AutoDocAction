@@ -1,6 +1,16 @@
 def sample_function2():
     """
-    The needs of the many outweigh the needs of the few.
+    Calculates features i.e trend variables for 2,3,5,10 days
+
+    Parameters
+    ---------
+    group: DataFrame group
+        group of ticker_id
+    
+    Returns
+    ------
+    df: Dataframe
+        dataframe for all features for ticker_ids
     """
     var = 1
     SomeOtherValue = 117
