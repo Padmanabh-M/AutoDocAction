@@ -29,6 +29,8 @@ def save_file(file_path, function_defs):
 
     working_directory = os.getcwd()
 
+    print("WORKING DIR: ", working_directory)
+
     if os.path.exists(new_parent_folder_path):
         # print("new_parent_folder_path exists")
         pass
@@ -39,7 +41,6 @@ def save_file(file_path, function_defs):
 
     print("new_parent_split: ", new_parent_split)
 
-    print("WORKING DIR: ", working_directory)
 
     initPath = working_directory + "/src_for_doc" + "/" + i + "/__init__.py"
 
