@@ -52,7 +52,7 @@ def save_file(file_path, function_defs):
 
 
 def extract_functions(file_path):
-    print(file_path)
+    # print(file_path)
     with open(file_path, 'r', encoding="utf8") as file:
         tree = ast.parse(file.read())
 
