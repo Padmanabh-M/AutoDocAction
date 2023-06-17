@@ -15,9 +15,6 @@ def save_file(file_path, function_defs):
     #     os.mkdir("./src_for_doc")
 
     working_directory = os.getcwd()
-    # print(working_directory)
-
-    # print("FILE_PATH", file_path)
 
 
     # Code to check if folder for file exists, if not make one
@@ -25,14 +22,11 @@ def save_file(file_path, function_defs):
 
 
     new_parent_folder_path = "./src_for_doc" + parent_folder_path[1:]
-    # print("NEW PARENT FOLDER PATH", new_parent_folder_path)
 
 
     if os.path.exists(new_parent_folder_path):
-        # print("new_parent_folder_path exists")
         pass
     else:
-        # print("MAKING NEW PARENT FOLDER PATH: ", new_parent_folder_path)
         os.makedirs(new_parent_folder_path)
 
 
