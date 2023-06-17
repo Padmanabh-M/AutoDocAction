@@ -20,46 +20,19 @@ def save_file(file_path, function_defs):
     # Code to check if folder for file exists, if not make one
     parent_folder_path = "/".join(file_path.split("/")[:-1])
 
-    print("PARENT_FOLDER_PATH: ", parent_folder_path)
 
+    new_parent_folder_path = "./src_for_doc" + parent_folder_path[1:]
 
-    new_parent_folder_path = "/src_for_doc" + parent_folder_path[2:]
-
-    print("new_parent_folder_path: ", new_parent_folder_path)
-
-    working_directory = os.getcwd()
-
-    print("WORKING DIR: ", working_directory)
 
     if os.path.exists(new_parent_folder_path):
         # print("new_parent_folder_path exists")
         pass
     else:
-        os.makedirs(working_directory+new_parent_folder_path)
-
-    new_parent_split = new_parent_folder_path.split("/")
-
-    print("new_parent_split: ", new_parent_split)
-
-
-    initPath = working_directory + "/src_for_doc" + "/" + i + "/__init__.py"
-
-    print("INITPATH: ", initPath)
-
-
-    for i in new_parent_split:
-        if i != "src_for_doc" and i != ".":
-           initPath = working_directory + "/src_for_doc" + "/" + i + "/__init__.py"
-           if not os.path.exists(initPath):
-                with open(initPath, 'w') as init_file:
-                    pass
-
-
-    
+        os.makedirs(new_parent_folder_path)
 
 
     # Code to open py file at folder, and save contents
-    
+    working_directory = os.getcwd()
     with open(working_directory + "/src_for_doc" + file_path[1:], 'w') as file:
         initPath = working_directory + "/src_for_doc" + "/".join(file_path.split("/")[:-1])[1:] + "/__init__.py"
         # print(initPath)
@@ -74,7 +47,7 @@ def save_file(file_path, function_defs):
 
 
 def extract_functions(file_path):
-    # print(file_path)
+    print(file_path)
     with open(file_path, 'r', encoding="utf8") as file:
         tree = ast.parse(file.read())
 
@@ -127,7 +100,6 @@ def process_directory(directory_path):
 
 directory_path = '..'
 process_directory(directory_path)
-
 
 
 
