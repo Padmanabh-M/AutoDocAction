@@ -37,6 +37,7 @@ jobs:
       - name: Build HTML
         run: | 
           sh DocMaterial/order66.sh
+          tree 
 
       - name: Run ghp-import
         run: | 
