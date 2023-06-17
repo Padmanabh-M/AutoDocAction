@@ -6,6 +6,6 @@ cp ./DocMaterial/index.rst ./DocMaterial/conf.py ./docs
 sphinx-apidoc -o docs .
 tree
 cat docs/conf.py
-rm docs/conf.rst docs/crawler.rst
+# rm docs/conf.rst docs/crawler.rst
 cd docs/
 make html
