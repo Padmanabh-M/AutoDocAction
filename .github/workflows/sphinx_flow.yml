@@ -32,7 +32,7 @@ jobs:
         run: | 
           python -m pip install --upgrade pip
           python3 DocMaterial/crawler.py
-          tree -d
+          tree 
           pip install -r docs/requirements.txt
       - name: Build HTML
         run: | 
