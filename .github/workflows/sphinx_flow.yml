@@ -38,6 +38,7 @@ jobs:
         run: | 
           sh DocMaterial/order66.sh
           tree 
+          cat ./src_for_doc./AutoDocAction/module1/Inside/AnotherLevel/DeepFile.py
 
       - name: Run ghp-import
         run: | 
