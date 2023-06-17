@@ -36,14 +36,23 @@ def save_file(file_path, function_defs):
         os.makedirs(new_parent_folder_path)
 
 
-    # Code to open py file at folder, and save contents
-    
+    # Code to open py file at folder, and save contents, 
     with open(working_directory + "/src_for_doc" + file_path[1:], 'w') as file:
-        initPath = working_directory + "/src_for_doc" + "/".join(file_path.split("/")[:-1])[1:] + "/__init__.py"
-        print("/".join(file_path.split("/")[:-1])[1:])
-        if not os.path.exists(initPath):
-            with open(initPath, 'w') as init_file:
-                pass
+        root = "/".join(file_path.split("/")[:-1])[1:]
+        splits = root.split("/")
+        head = "/".join(splits[:2])
+        for i in range(2, len(splits)):
+            mid =  head + "/" + splits[i]
+            
+
+            initPath = working_directory + "/src_for_doc" + mid + "/__init__.py"
+        
+            if not os.path.exists(initPath):
+                with open(initPath, 'w') as init_file:
+                    pass
+            
+            head = mid
+
 
         for func in function_defs:
             file.write(ast.unparse(func) + "\n"*4)
