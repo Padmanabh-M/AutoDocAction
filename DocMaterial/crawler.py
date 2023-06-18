@@ -14,6 +14,8 @@ def save_file(file_path, function_defs):
     #     # print("Making new src_for_doc folder")
     #     os.mkdir("./src_for_doc")
 
+    file_path = file_path.replace("-", "_")
+
     working_directory = os.getcwd()
 
 
