@@ -3,12 +3,12 @@ def sample_function2():
     Calculates features i.e trend variables for 2,3,5,10 days
 
     Parameters
-    ---------
+    ----------
     group: DataFrame group
         group of ticker_id
     
     Returns
-    ------
+    -------
     df: Dataframe
         dataframe for all features for ticker_ids
         
