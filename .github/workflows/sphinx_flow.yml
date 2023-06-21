@@ -58,7 +58,7 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          echo structure
+          echo struct
           ls
           echo Going to temp
           cd ./temp
