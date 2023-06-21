@@ -52,7 +52,7 @@ jobs:
           
       - name: Checking dest list
         run: | 
-          ls
+          ls temp
 
       - name: Commit and Push Changes
         run: |
