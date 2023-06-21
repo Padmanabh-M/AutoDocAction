@@ -41,14 +41,14 @@ jobs:
         run: | 
           ghp-import -n -p -f docs/_build/html
           
-#       - name: Copy Folder to Destination Repository
-#         run: cp -r docs/_build/html destination-folder
+      - name: Copy Folder to Destination Repository
+        run: cp -r docs/_build/html ./temp
 
       - name: Checkout Destination Repository
         uses: actions/checkout@v2
         with:
           repository: Padmanabh-M/Target  # Replace with your destination repository information
-          path: docs/_build/html
+          path: ./temp
 
       - name: Commit and Push Changes
         run: |
