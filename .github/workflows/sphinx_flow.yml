@@ -40,3 +40,21 @@ jobs:
       - name: Run ghp-import
         run: | 
           ghp-import -n -p -f docs/_build/html
+          
+#       - name: Copy Folder to Destination Repository
+#         run: cp -r docs/_build/html destination-folder
+
+      - name: Checkout Destination Repository
+        uses: actions/checkout@v2
+        with:
+          repository: Padmanabh-M/Target  # Replace with your destination repository information
+          path: docs/_build/html
+
+      - name: Commit and Push Changes
+        run: |
+          cd docs/_build/html
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Update folder from source repository"
+          git push
