@@ -1,0 +1,21 @@
+module1.Inside.AnotherLevel package
+===================================
+
+Submodules
+----------
+
+module1.Inside.AnotherLevel.DeepFile module
+-------------------------------------------
+
+.. automodule:: module1.Inside.AnotherLevel.DeepFile
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: module1.Inside.AnotherLevel
+   :members:
+   :undoc-members:
+   :show-inheritance:
