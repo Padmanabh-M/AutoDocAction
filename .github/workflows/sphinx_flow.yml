@@ -58,6 +58,7 @@ jobs:
         run: |
           echo Going to temp
           cd ./temp
+          git init
           echo configuring username
           git config user.name "Padmanabh-M"
           echo configuring email
@@ -66,5 +67,5 @@ jobs:
           git add .
           echo commiting
           git commit -m "Update folder from source repository"
-          echo pushing
-          git push
+          git remote add origin git@github.com:Padmanabh-M/Target.git
+          git push origin master –force
