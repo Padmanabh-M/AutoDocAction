@@ -40,9 +40,7 @@ jobs:
       - name: Run ghp-import
         run: | 
           ghp-import -n -p -f docs/_build/html
-          
-      - name: Copy Folder to Destination Repository
-        run: cp -r docs/_build/html ./temp
+  
 
       - name: Checkout Destination Repository
         uses: actions/checkout@v2
@@ -53,6 +51,9 @@ jobs:
       - name: Checking dest list
         run: | 
           ls temp
+          
+      - name: Copy Folder to Destination Repository
+        run: cp -r docs/_build/html ./temp
 
       - name: Commit and Push Changes
         run: |
