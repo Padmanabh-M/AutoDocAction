@@ -72,4 +72,4 @@ jobs:
           echo commiting
           git commit -m "Update folder from source repository"
           git remote set-url origin git@github.com:Padmanabh-M/Target.git
-          git push origin master –force
+          git push origin main –force
