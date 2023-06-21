@@ -53,8 +53,8 @@ jobs:
       - name: Commit and Push Changes
         run: |
           cd ./temp
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          git config user.name "Padmanabh-M"
+          git config user.email "specter0117@gmail.com"
           git add .
           git commit -m "Update folder from source repository"
           git push
