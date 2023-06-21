@@ -47,8 +47,7 @@ jobs:
         with:
           repository: Padmanabh-M/Target  # Replace with your destination repository information
           path: ./temp
-          persist-credentials: true 
-          
+                
       - name: Checking dest list
         run: | 
           ls temp
@@ -63,11 +62,7 @@ jobs:
           echo Going to temp
           cd ./temp
           git init
-          git remote set-url origin https://Padmanabh-M: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@github.com/Padmanabh-M/Target.git
-          echo configuring username
-          git config user.name "Padmanabh-M"
-          echo configuring email
-          git config user.email "specter0117@gmail.com"
+          git remote set-url origin https://Padmanabh-M:@github.com/Padmanabh-M/Target.git
           echo adding
           git add .
           echo commiting
