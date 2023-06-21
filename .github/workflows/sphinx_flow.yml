@@ -49,6 +49,10 @@ jobs:
         with:
           repository: Padmanabh-M/Target  # Replace with your destination repository information
           path: ./temp
+          
+      - name: Checking dest list
+        run: | 
+          ls
 
       - name: Commit and Push Changes
         run: |
