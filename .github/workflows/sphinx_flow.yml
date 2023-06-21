@@ -56,9 +56,15 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
+          echo Going to temp
           cd ./temp
+          echo configuring username
           git config user.name "Padmanabh-M"
+          echo configuring email
           git config user.email "specter0117@gmail.com"
+          echo adding
           git add .
+          echo commiting
           git commit -m "Update folder from source repository"
+          echo pushing
           git push
