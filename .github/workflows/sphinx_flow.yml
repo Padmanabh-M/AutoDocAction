@@ -47,6 +47,8 @@ jobs:
         with:
           repository: Padmanabh-M/Target  # Replace with your destination repository information
           path: ./temp
+          token: ${{ secrets.BOT_TOKEN }}
+          persist-credentials: true 
           
       - name: Checking dest list
         run: | 
