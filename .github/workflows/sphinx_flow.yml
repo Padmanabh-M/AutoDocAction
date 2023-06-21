@@ -63,6 +63,7 @@ jobs:
           echo Going to temp
           cd ./temp
           git init
+          git remote set-url origin https://Padmanabh-M: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@github.com/Padmanabh-M/Target.git
           echo configuring username
           git config user.name "Padmanabh-M"
           echo configuring email
@@ -70,6 +71,5 @@ jobs:
           echo adding
           git add .
           echo commiting
-          git commit -m "Update folder from source repository"
-          git remote set-url origin https://Padmanabh-M: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@github.com/Padmanabh-M/Target.git 
+          git commit -m "Update folder from source repository" 
           git push origin main
