@@ -66,9 +66,7 @@ jobs:
           git config --global user.name "Padmanabh-M"
           echo remote
           git remote -v
-          git remote add origin https://github.com/Padmanabh-M/Target.git
           git push --set-upstream origin master
-          git remote set-url origin https://Padmanabh-M:@github.com/Padmanabh-M/Target.git
           echo adding
           git add .
           echo commiting
