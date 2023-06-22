@@ -61,7 +61,7 @@ jobs:
           ls
           echo Going to temp
           cd ./temp
-          git init
+          git init --initial-branch=master
           git config --global user.email "specter0117@gmail.com"
           git config --global user.name "Padmanabh-M"
           echo remote
@@ -73,4 +73,4 @@ jobs:
           git add .
           echo commiting
           git commit -m "Update folder from source repository" 
-          git push 
+          git push -u origin master
