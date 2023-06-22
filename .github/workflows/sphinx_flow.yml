@@ -69,4 +69,5 @@ jobs:
           git add .
           echo commiting
           git commit -m "Update folder from source repository" 
+          git remote add origin https://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@github.com/Padmanabh-M/Target
           git push --set-upstream origin main
