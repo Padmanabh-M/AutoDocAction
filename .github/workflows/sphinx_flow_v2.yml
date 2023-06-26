@@ -1,0 +1,82 @@
+# Action for Sphinx autodoc
+
+name: Build-sphinx-docs  
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs: 
+  # This workflow contains a single job called "build"
+  build: 
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2
+        with:
+           python-version: "3.10"
+        
+      - name: Install dependencies and run crawler
+        run: | 
+          python -m pip install --upgrade pip
+          python3 DocMaterial/crawler.py
+          pip install -r docs/requirements.txt
+      - name: Build HTML
+        run: | 
+          sh DocMaterial/order66.sh
+
+      - name: Run ghp-import
+        run: | 
+          ghp-import -n -p -f docs/_build/html
+  
+
+      - name: Checkout Destination Repository
+        uses: actions/checkout@v2
+        with:
+          repository: Padmanabh-M/Target  # Replace with your destination repository information
+          path: ./temp
+          token: ${{ secrets.ACTION_SECRET }} 
+          persist-credentials: true 
+                
+      - name: Checking dest list
+        run: | 
+          ls temp
+          ls temp/html
+          
+      - name: Copy Folder to Destination Repository
+        run: cp -r docs/_build/html ./temp
+        
+        
+      - name: Checking dest list again
+        run: | 
+          ls temp
+          ls temp/html
+        
+        
+      - name: Commit and Push Changes
+        run: |
+          echo struct
+          ls
+          echo Going to temp
+          cd ./temp
+          git init --initial-branch=main
+          git config --global user.email "specter0117@gmail.com"
+          git config --global user.name "Padmanabh-M"
+          echo remote
+          echo adding
+          git add .
+          echo commiting
+          git commit -m "Update folder from source repository" 
+          git push
