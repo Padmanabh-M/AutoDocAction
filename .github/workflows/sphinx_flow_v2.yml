@@ -59,27 +59,28 @@ jobs:
         run: cp -r docs/_build/html ./temp
         
         
-      - name: Checking for files
+      - name: Checking for new files and pushing
         working-directory: ./temp
         run: | 
           git add .
           git status --porcelain | wc -l
           if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
-            echo "::set-env name=HAS_NEW::true"
+            git config --global user.email "specter0117@gmail.com"
+            git config --global user.name "Padmanabh-M"
+            git commit -m "Update folder from source repository" 
+            git push 
           else
-            echo "::set-env name=HAS_NEW::false"
+            echo "No New files"
           fi
         
         
-      - name: Commit and Push Changes
-        if: ${{ env.HAS_NEW == 'true' }}
-        working-directory: ./temp
-        run: |
-          echo struct
-          ls
-          echo Going to temp
-          cd ./temp
-          git config --global user.email "specter0117@gmail.com"
-          git config --global user.name "Padmanabh-M"
-          git commit -m "Update folder from source repository" 
-          git push 
+        
+#       - name: Commit and Push Changes
+#         if: ${{ env.HAS_NEW == 'true' }}
+#         working-directory: ./temp
+#         run: |
+#           echo struct
+#           ls
+#           echo Going to temp
+#           cd ./temp
+          
