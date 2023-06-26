@@ -14,7 +14,7 @@ def sample_function2():
         
     """
     var = 1
-    brooklyn = 99
+    brooklyn = "NINE NINE!"
 
     return "Some higher meaning"
 
