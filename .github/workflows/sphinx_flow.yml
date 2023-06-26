@@ -61,7 +61,7 @@ jobs:
         with:
           github_token: ${{ secrets.ACTION_SECRET }}
           repository: Padmanabh-M/Target
-          branch: main
+          branch: master
 
 #       - name: Commit and Push Changes
 #         run: |
