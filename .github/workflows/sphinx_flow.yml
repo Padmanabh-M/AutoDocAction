@@ -79,4 +79,4 @@ jobs:
           git add .
           echo commiting
           git commit -m "Update folder from source repository" 
-          git push 
+          git push -u origin/main
