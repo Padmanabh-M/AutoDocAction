@@ -1,6 +1,6 @@
 # Action for Sphinx autodoc
 
-name: Build-sphinx-docs  
+name: Build-sphinx-docs   
 
 # Controls when the workflow will run
 on:
