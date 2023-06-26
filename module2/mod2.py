@@ -14,7 +14,7 @@ def sample_function2():
         
     """
     var = 1
-    SomeOtherValue = 7249360117
+    brooklyn = 99
 
     return "Some higher meaning"
 
