@@ -59,9 +59,9 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.ACTION_SECRET }}
+          github_token: ${{ secrets.ACTION_SECRET }} 
           repository: Padmanabh-M/Target
-          branch: master 
+          branch: ma
 
 #       - name: Commit and Push Changes
 #         run: |
