@@ -65,14 +65,14 @@ jobs:
           git add .
           git status --porcelain | wc -l
           if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
-            echo "::set-output name=hasNewFiles::true"
+            echo "::set-env name=HAS_NEW::true"
           else
-            echo "::set-output name=hasNewFiles::false"
+            echo "::set-env name=HAS_NEW::false"
           fi
         
         
       - name: Commit and Push Changes
-        if: ${{ steps.newFiles.outputs.hasNewFiles == 'true' }}
+        if: ${{ env.HAS_NEW == 'true' }}
         working-directory: ./temp
         run: |
           echo struct
