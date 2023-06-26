@@ -54,21 +54,28 @@ jobs:
           
       - name: Copy Folder to Destination Repository
         run: cp -r docs/_build/html ./temp
+        
+        
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.ACTION_SECRET }}
+          branch: main
 
-      - name: Commit and Push Changes
-        run: |
-          echo struct
-          ls
-          echo Going to temp
-          cd ./temp
-          git init --initial-branch=main
-          git config --global user.email "specter0117@gmail.com"
-          git config --global user.name "Padmanabh-M"
-          echo remote
-          echo adding
-          git add .
-          echo commiting
-          git commit -m "Update folder from source repository" 
-          git remote remove origin
-          git remote add origin https://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@github.com/Padmanabh-M/Target
-          git push --set-upstream origin main
+#       - name: Commit and Push Changes
+#         run: |
+#           echo struct
+#           ls
+#           echo Going to temp
+#           cd ./temp
+#           git init --initial-branch=main
+#           git config --global user.email "specter0117@gmail.com"
+#           git config --global user.name "Padmanabh-M"
+#           echo remote
+#           echo adding
+#           git add .
+#           echo commiting
+#           git commit -m "Update folder from source repository" 
+#           git remote remove origin
+#           git remote add origin https://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@github.com/Padmanabh-M/Target
+#           git push --set-upstream origin main
