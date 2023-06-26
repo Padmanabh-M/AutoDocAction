@@ -60,7 +60,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ACTION_SECRET }}
-          repository: https://github.com/Padmanabh-M/Target.git
+          repository: Padmanabh-M/Target
           branch: main
 
 #       - name: Commit and Push Changes
