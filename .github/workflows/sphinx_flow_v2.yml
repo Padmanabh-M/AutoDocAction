@@ -37,7 +37,11 @@ jobs:
         run: | 
           sh DocMaterial/order66.sh
 
-      
+      - name: Run ghp-import
+        run: | 
+          ghp-import -n -p -f ./temp
+          
+          
       - name: Checkout Destination Repository
         uses: actions/checkout@v2
         with:
@@ -51,8 +55,7 @@ jobs:
           ls temp
           
           
-      
-          
+              
       - name: Copy Folder to Destination Repository
         run: cp -r docs/_build/html/. ./temp
         
@@ -75,11 +78,7 @@ jobs:
             echo "No New files"
           fi
         
-      - name: Run ghp-import
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACTION_SECRET }}
-        run: | 
-          ghp-import -n -p -f ./temp
+
         
 #       - name: Commit and Push Changes
 #         if: ${{ env.HAS_NEW == 'true' }}
