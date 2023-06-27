@@ -50,9 +50,10 @@ jobs:
           token: ${{ secrets.ACTION_SECRET }} 
           persist-credentials: true 
                 
-      - name: Checking dest list
+      - name: Checking dest list and cleaning
         run: | 
           ls temp
+          rm -rf ./temp/*
           
           
               
