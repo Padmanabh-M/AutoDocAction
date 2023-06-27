@@ -76,6 +76,8 @@ jobs:
           fi
         
       - name: Run ghp-import
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTION_SECRET }}
         run: | 
           ghp-import -n -p -f ./temp
         
