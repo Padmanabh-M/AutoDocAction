@@ -37,11 +37,7 @@ jobs:
         run: | 
           sh DocMaterial/order66.sh
 
-      - name: Run ghp-import
-        run: | 
-          ghp-import -n -p -f docs/_build/html
-  
-
+      
       - name: Checkout Destination Repository
         uses: actions/checkout@v2
         with:
@@ -79,7 +75,9 @@ jobs:
             echo "No New files"
           fi
         
-        
+      - name: Run ghp-import
+        run: | 
+          ghp-import -n -p -f ./temp
         
 #       - name: Commit and Push Changes
 #         if: ${{ env.HAS_NEW == 'true' }}
