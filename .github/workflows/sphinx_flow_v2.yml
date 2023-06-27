@@ -53,7 +53,7 @@ jobs:
       - name: Checking dest list
         run: | 
           ls temp
-          ls temp/html
+          
           
       
           
@@ -63,7 +63,7 @@ jobs:
       - name: Checking dest list again
         run: | 
           ls temp
-          ls temp/html  
+          
         
       - name: Checking for new files and pushing
         working-directory: ./temp
