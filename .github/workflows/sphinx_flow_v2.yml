@@ -53,16 +53,21 @@ jobs:
       - name: Checking dest list
         run: | 
           ls temp
-          ls temp/html
+          
+          
+      
           
       - name: Copy Folder to Destination Repository
-        run: cp -r docs/_build/html ./temp
+        run: cp -r docs/_build/html/. ./temp
         
+      - name: Checking dest list again
+        run: | 
+          ls temp
+          
         
       - name: Checking for new files and pushing
         working-directory: ./temp
         run: | 
-          cd html
           git add .
           git status --porcelain | wc -l
           if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
