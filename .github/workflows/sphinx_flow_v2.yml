@@ -40,8 +40,8 @@ jobs:
       - name: Run ghp-import
         run: | 
           ghp-import -n -p -f docs/_build/html
-  
-
+          
+          
       - name: Checkout Destination Repository
         uses: actions/checkout@v2
         with:
@@ -55,8 +55,7 @@ jobs:
           ls temp
           
           
-      
-          
+              
       - name: Copy Folder to Destination Repository
         run: cp -r docs/_build/html/. ./temp
         
@@ -68,6 +67,7 @@ jobs:
       - name: Checking for new files and pushing
         working-directory: ./temp
         run: | 
+          touch .nojekyll
           git add .
           git status --porcelain | wc -l
           if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
@@ -79,7 +79,7 @@ jobs:
             echo "No New files"
           fi
         
-        
+
         
 #       - name: Commit and Push Changes
 #         if: ${{ env.HAS_NEW == 'true' }}
