@@ -14,7 +14,7 @@ def sample_function2():
         
     """
     var = 1
-    brooklyn = "NINE NINE!"
+    brooklyn = "Firefox Kreed"
 
     return "Some higher meaning"
 
