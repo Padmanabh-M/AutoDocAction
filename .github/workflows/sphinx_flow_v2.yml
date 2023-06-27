@@ -58,7 +58,7 @@ jobs:
       
           
       - name: Copy Folder to Destination Repository
-        run: cp -r docs/_build/html ./temp
+        run: cp -r docs/_build/html/. ./temp
         
       - name: Checking dest list again
         run: | 
