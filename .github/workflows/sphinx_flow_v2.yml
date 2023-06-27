@@ -37,9 +37,9 @@ jobs:
         run: | 
           sh DocMaterial/order66.sh
 
-      - name: Run ghp-import
-        run: | 
-          ghp-import -n -p -f docs/_build/html
+#       - name: Run ghp-import
+#         run: | 
+#           ghp-import -n -p -f docs/_build/html
           
           
       - name: Checkout Destination Repository
@@ -54,6 +54,8 @@ jobs:
         run: | 
           ls temp
           rm -rf ./temp/*
+          echo printing after removing
+          ls temp
           
           
               
