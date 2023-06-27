@@ -39,7 +39,7 @@ jobs:
 
       - name: Run ghp-import
         run: | 
-          ghp-import -n -p -f ./temp
+          ghp-import -n -p -f docs/_build/html
           
           
       - name: Checkout Destination Repository
