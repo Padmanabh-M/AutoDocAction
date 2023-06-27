@@ -68,7 +68,6 @@ jobs:
       - name: Checking for new files and pushing
         working-directory: ./temp
         run: | 
-          cd html
           git add .
           git status --porcelain | wc -l
           if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
