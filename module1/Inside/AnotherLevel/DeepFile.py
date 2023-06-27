@@ -7,4 +7,4 @@ def somethingInTheWay():
 
     Author: Paddy
     """
-    return "Any feelings"
+    return "Rebellion are built on hope"
