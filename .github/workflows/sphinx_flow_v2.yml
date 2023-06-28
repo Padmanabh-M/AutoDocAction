@@ -36,11 +36,7 @@ jobs:
       - name: Build HTML
         run: | 
           sh DocMaterial/order66.sh
-
-#       - name: Run ghp-import
-#         run: | 
-#           ghp-import -n -p -f docs/_build/html
-          
+   
           
       - name: Checkout Destination Repository
         uses: actions/checkout@v2
@@ -56,7 +52,6 @@ jobs:
           rm -rf ./temp/*
           echo printing after removing
           ls temp
-          
           
               
       - name: Copy Folder to Destination Repository
@@ -81,15 +76,5 @@ jobs:
           else
             echo "No New files"
           fi
-        
-
-        
-#       - name: Commit and Push Changes
-#         if: ${{ env.HAS_NEW == 'true' }}
-#         working-directory: ./temp
-#         run: |
-#           echo struct
-#           ls
-#           echo Going to temp
-#           cd ./temp
+          
           
