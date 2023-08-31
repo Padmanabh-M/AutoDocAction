@@ -1,6 +1,6 @@
 # Action for Sphinx autodoc
 
-name: Build-sphinx-docs   
+name: Scorecard workflow 
 
 # Controls when the workflow will run
 on:
@@ -31,6 +31,10 @@ jobs:
       - name: Pulling Scorecard image
         run: | 
           docker pull gcr.io/openssf/scorecard:stable
+
+      - name: Running Scorecard protocol
+        run: | 
+          docker run -e GITHUB_AUTH_TOKEN=${{ secrets.ACTION_SECRET }} gcr.io/openssf/scorecard:stable --show-details --repo=https://github.com/Padmanabh-M/AutoDocAction
         
       # - name: Install dependencies and run crawler
       #   run: | 
